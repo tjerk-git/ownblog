@@ -1,5 +1,7 @@
-<h1>Listing Pictures</h1>
+<h1>Photos</h1>
 
-<%= for picture <- @pictures do %>
-      <img src="<%= FileUploader.Image.url({ picture.image, picture }) %>" width="800" />
-<% end %>
+<div class="photos">
+      <%= for picture <- @pictures do %>
+            <img src="<%= FileUploader.Image.url({ picture.image, picture }) %>" width="800" />
+      <% end %>
+</div>

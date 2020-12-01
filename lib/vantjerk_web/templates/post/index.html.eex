@@ -1,10 +1,16 @@
 <h1>Latest Posts</h1>
 
+<p>
+<h3>Dit is een plekje van Tjerk, op het internet.</h3>
+Tjerk ontwerpt dingen, programmeert dingen en praat over het ontwerpen en programmeren van dingen. Voornamelijk voor mensen.
+</p>
+
 <table>
   <thead>
     <tr>
       <th>Title</th>
       <th>Date published</th>
+      <th>Read time</th>
     </tr>
   </thead>
   <tbody>
@@ -17,7 +23,8 @@
         </div>
       </a>
       </td>
-      <td><%= post.inserted_at %></td>
+      <td><%= Timex.from_now(post.inserted_at) %></td>
+      <td><%= post.read_time %> minute(s)</td>
     </tr>
 <% end %>
   </tbody>

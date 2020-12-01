@@ -49,6 +49,7 @@ defmodule Vantjerk.MixProject do
       {:phx_gen_auth, "~> 0.6", only: [:dev], runtime: false},
       {:earmark, "~> 1.0.1"},
       {:arc_ecto, "~> 0.11.3"},
+      {:timex, "~> 3.6"},
     ]
   end
 

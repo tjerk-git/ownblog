@@ -18,9 +18,10 @@ defmodule VantjerkWeb.Router do
 
   scope "/", VantjerkWeb do
     pipe_through :browser
-    get "/", PageController, :index
+    get "/", PostController, :index
     resources "/posts", PostController, only: [:index]
     resources "/posts", PostController, only: [:show], param: "slug"
+    resources "/photos", PictureController, only: [:index]
   end
   # Other scopes may use custom stacks.
   # scope "/api", VantjerkWeb do
@@ -62,7 +63,8 @@ defmodule VantjerkWeb.Router do
     get "/users/settings", UserSettingsController, :edit
     put "/users/settings", UserSettingsController, :update
     get "/users/settings/confirm_email/:token", UserSettingsController, :confirm_email
-    
+
+    resources "/pictures", PictureController
     resources "/posts", PostController, only: [:create, :new, :delete, :edit, :update]
   end
 

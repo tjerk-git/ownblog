@@ -1,23 +1,12 @@
-<h1>Show Post</h1>
+<h1> <%= @post.title %> </h1>
 
-<ul>
-
-  <li>
-    <strong>Title:</strong>
-    <%= @post.title %>
-  </li>
-
-  <li>
-    <strong>Body:</strong>
     <%= markdown(@post.body) %>
-  </li>
 
-  <li>
-    <strong>Views:</strong>
-    <%= @post.views %>
-  </li>
 
-</ul>
+<div class="post-footer">
+  <strong>Views:</strong>
+  <%= @post.views %>
 
-<span><%= link "Edit", to: Routes.post_path(@conn, :edit, @post) %></span>
-<span><%= link "Back", to: Routes.post_path(@conn, :index) %></span>
+  <strong>Read time:</strong>
+  10 mins
+</div>

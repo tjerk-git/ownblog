@@ -4,31 +4,49 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Vantjerk · Phoenix Framework</title>
+    <title>Blog van Tjerk Dijkstra</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
   <body>
     <header>
-      <section class="container">
+    <div class="flex-grid-half">
+
+      <div class="col">
+
+            <div class="logo-title">
+             <a href="/" class="nav-logo">
+            <svg width="24px" height="24px" viewBox="0 0 146 235" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>Path</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="iPhone-11" transform="translate(-97.000000, -353.000000)" stroke="#000000" stroke-width="20">
+                        <polyline id="Path" points="100.066667 587.726209 100.066667 358.726209 239.066667 446.965452 239.066667 587.726209"></polyline>
+                    </g>
+                </g>
+            </svg>
+            </a>
+
+              <h2>Tjerk Dijkstra</h2>
+
+            </div>
+      </div>
+
+      <div class="col align-right">
         <nav role="navigation">
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
-          <%= render "_user_menu.html", assigns %>
+          <a href="/photos" class="<%= LinkHelper.active_class("/photos", @conn) %>">Photos</a>
+          <a href="/" class="<%= LinkHelper.active_class("/", @conn) %>" >Blog</a>
         </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
-      </section>
+      </div>
+
+      </div>
     </header>
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= @inner_content %>
     </main>
+    <footer>
+    <span>© 2020</span> · Tjerk Dijkstra  ·  @tjer.k
+    </footer>
   </body>
 </html>

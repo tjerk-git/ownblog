@@ -1,7 +1,7 @@
 defmodule Vantjerk.Posts.Post do
   use Ecto.Schema
   import Ecto.Changeset
-
+  alias Vantjerk.Repo 
   schema "posts" do
     field :body, :string
     field :title, :string
@@ -19,21 +19,19 @@ defmodule Vantjerk.Posts.Post do
     end
 
   def title_to_slug(changeset) do
-    
     if title = get_change(changeset, :title) do
-    
       put_change(changeset, :slug, __MODULE__.slugify(title))
     else
       changeset
     end
   end
 
-def slugify(title) do
-  title
+  def slugify(title) do
+    title
     |> String.downcase
     |> String.replace(~r/[^a-z0-9\s-]/, "")
     |> String.replace(~r/(\s|-)+/, "-")
-end
+  end
 
 
 end

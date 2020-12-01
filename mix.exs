@@ -20,7 +20,7 @@ defmodule Vantjerk.MixProject do
   def application do
     [
       mod: {Vantjerk.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :arc_ecto, :runtime_tools]
     ]
   end
 
@@ -48,6 +48,7 @@ defmodule Vantjerk.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:phx_gen_auth, "~> 0.6", only: [:dev], runtime: false},
       {:earmark, "~> 1.0.1"},
+      {:arc_ecto, "~> 0.11.3"},
     ]
   end
 

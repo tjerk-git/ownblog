@@ -1,6 +1,11 @@
 /* This file is for your main application css. */
 @import "./phoenix.css";
 
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 /* Alerts and form errors */
 .alert {
   padding: 15px;
@@ -33,4 +38,93 @@
   color: #a94442;
   display: block;
   margin: -1rem 0 2rem;
+}
+.nav-logo {
+  width: 24px;
+  float: left;
+  margin-right: 11px;
+}
+
+nav a{
+  color:black;
+  max-width:100px;
+  float:right;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+nav .active{
+  color: #274dd8;
+  border-bottom: 1px solid;
+}
+
+.flex-grid {
+  display: flex;
+
+}
+.flex-grid .col {
+  flex: 1;
+}
+
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-grid-thirds .col {
+  width: 32%;
+}
+
+.align-right{
+ text-align:right;
+}
+
+.flex-grid-half {
+  display: flex;
+  margin-left: 20%;
+  margin-right: 28%;
+}
+
+.flex-grid-half .col {
+  width: 50%;
+}
+
+@media (max-width: 900px) {
+  .flex-grid,
+  .flex-grid-thirds {
+    display: block;
+    .col {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+  .flex-grid-half {
+    display: flex;
+    margin-left:0%;
+    margin-right:0%;
+  }
+
+
+}
+
+.flex-grid { 
+  margin: 0 0 20px 0;
+}
+.col {
+  padding: 20px;
+}
+
+footer{
+  text-align: center;
+}
+
+.post-footer {
+  font-size:12px;
+  text-align:center;
+  padding:20px;
+  border-bottom:1px solid grey;
+  margin-bottom:10px;
+}
+
+.logo-title h2{
+  font-size:18px;
 }

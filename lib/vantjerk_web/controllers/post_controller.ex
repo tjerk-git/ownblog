@@ -1,9 +1,12 @@
 defmodule VantjerkWeb.PostController do
   use VantjerkWeb, :controller
 
+  import Ecto.Query
+
   alias Vantjerk.Posts
   alias Vantjerk.Posts.Post
   alias Vantjerk.Repo
+
   def index(conn, _params) do
     posts = Posts.list_posts()
     render(conn, "index.html", posts: posts)
@@ -16,12 +19,12 @@ defmodule VantjerkWeb.PostController do
 
   def create(conn, %{"post" => post_params}) do
 
-    
+
     case Posts.create_post(post_params) do
       {:ok, post} ->
         conn
         |> put_flash(:info, "Post created successfully.")
-        |> redirect(to: Routes.post_path(conn, :show, post))
+        |> redirect(to: Routes.post_path(conn, :show, post.slug))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -31,6 +34,9 @@ defmodule VantjerkWeb.PostController do
 
   def show(conn, %{"slug" => slug}) do
     post = Repo.get_by!(Post, slug: slug)
+    from(p in Post, update: [inc: [views: 1]], where: p.id == ^post.id)
+    |> Repo.update_all([])
+
     render(conn, "show.html", post: post)
   end
 

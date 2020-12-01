@@ -1,0 +1,5 @@
+<h1>Listing Pictures</h1>
+
+<%= for picture <- @pictures do %>
+      <img src="<%= FileUploader.Image.url({ picture.image, picture }) %>" width="800" />
+<% end %>

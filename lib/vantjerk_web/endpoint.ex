@@ -10,6 +10,8 @@ defmodule VantjerkWeb.Endpoint do
     signing_salt: "e7TwzhUa"
   ]
 
+  plug Plug.Static, at: "/uploads", from: "uploads"
+
   socket "/socket", VantjerkWeb.UserSocket,
     websocket: true,
     longpoll: false

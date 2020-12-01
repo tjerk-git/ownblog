@@ -1,0 +1,9 @@
+<h2>Show Picture</h2>
+
+<ul>
+  ...
+  <li>
+    <strong>Image</strong>
+    <img src="<%= FileUploader.Image.url({ @picture.image, @picture }) %>" width="300" />
+  </li>
+</ul>

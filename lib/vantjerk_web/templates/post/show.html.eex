@@ -8,5 +8,5 @@
   <%= @post.views %>
 
   <strong>Read time:</strong>
-  10 mins
+  <%= @post.read_time %> minutes
 </div>

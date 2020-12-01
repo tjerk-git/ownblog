@@ -7,6 +7,7 @@ defmodule Vantjerk.Repo.Migrations.CreatePosts do
       add :body, :text
       add :views, :integer
       add :slug, :text
+      add :read_time, :integer
       timestamps()
     end
 

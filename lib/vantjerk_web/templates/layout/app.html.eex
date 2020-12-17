@@ -32,7 +32,7 @@
       <div class="col align-right">
         <nav role="navigation">
           <a href="/photos" class="<%= LinkHelper.active_class("/photos", @conn) %>">Photos</a>
-          <a href="/" class="<%= LinkHelper.active_class("/", @conn) %>" >Blog</a>
+          <a href="/" class="<%= LinkHelper.active_class("/posts", @conn) %>" >Blog</a>
         </nav>
       </div>
 
@@ -46,5 +46,18 @@
     <footer>
     <span>© 2020</span> · Tjerk Dijkstra  ·  @tjer.k
     </footer>
+
+      <script>
+      (function (e, x, p) {
+        if (!window.hasOwnProperty(e)) {
+          window[e] = { x: x };
+        }
+        var script = document.createElement('script');
+        script.src = 'https://static.experiencelayer.com/exports/xl_viewer.js';
+        script.async = true;
+        document.body.appendChild(script);
+      })('xlViewer', 'd6a19ed5-5f75-4ad3-acee-0741f2b7a56f');
+    </script>
+
   </body>
 </html>
